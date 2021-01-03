@@ -11,3 +11,6 @@ class TimeseriesHoldout:
         train_indices = np.where(X[self.date_column] < self.test_start)[0]
         test_indices = np.where(X[self.date_column] >= self.test_start)[0]
         yield train_indices, test_indices
+
+    def get_n_splits(self, X=None, y=None, groups=None):
+        return 1
